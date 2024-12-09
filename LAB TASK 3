@@ -1,0 +1,80 @@
+# ATM Machine Program
+
+# Initial balance
+balance = 1000
+
+# Correct PIN
+correct_pin = 1234
+
+# Function to display the menu
+def atm_menu():
+    print("Aslamo-ul-kum :")
+    print("WELCOME TO ATM MASHINE:")
+    print("\nATM Menu:")
+    print("1. Check Balance")
+    print("2. Withdraw Money")
+    print("3. Exit")
+
+# Function to check balance
+def check_balance():
+    print(f"\nYour current balance is: ${balance}")
+
+# Function to withdraw money
+def withdraw_money():
+    global balance
+    amount = float(input("\n Piyar Ali please Enter the amount to withdraw: "))
+    if amount <= balance:
+        balance -= amount
+        print(f"${amount} withdrawn.Now your remaining balance is : ${balance}")
+    else:
+        print("Insufficient balance!")
+
+# Main program logic
+def atm():
+    # User enters PIN
+    pin = int(input("Enter your PIN: "))
+    
+    # Check if the PIN is correct
+    if pin == correct_pin:
+        while True:
+            atm_menu()
+            choice = input("\n Please Choose an option of the following: ")
+            
+            if choice == '1':
+                check_balance()
+            elif choice == '2':
+                withdraw_money()
+            elif choice == '3':
+                print("Exiting the ATM. Thank you!")
+                break
+            else:
+                print("Invalid option. Please try again.")
+    else:
+        print("Incorrect PIN. Terminating program.")
+
+# Run the ATM program
+atm()
+
+
+
+
+
+# Program to check username and password
+
+# Set the correct username and password
+correct_username = "admin"
+correct_password = 12345
+
+# Ask the user to enter the username and password
+username = input(" \n Hello Comrade Enter User Name: ")
+password = input(" Enter password: ")
+
+# Check if both username and password are correct
+if username == correct_username and password == str(correct_password):
+    print(" congratulation Login Successful!")
+# Check if the username is incorrect
+elif username != correct_username:
+    print("Incorrect username")
+# Check if the password is incorrect
+elif password != str(correct_password):
+    print("Incorrect password")
